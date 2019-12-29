@@ -9,3 +9,7 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
     register-with-eureka: false
     fetch-registry: false
+
+spring:
+  application:
+    name: eureka-server
