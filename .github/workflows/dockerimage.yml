@@ -10,5 +10,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: Set up JDK 11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+    - name: Build with Maven
+        run: mvn clean install
+    #- uses: actions/checkout@v1
     - name: Build the Docker image
       run: docker build . --file api-login/Dockerfile --tag my-image-name:$(date +%s)
